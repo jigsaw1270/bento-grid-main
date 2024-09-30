@@ -6,7 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
-  <title>Frontend Mentor | Bento grid</title>
+  <title>Bento grid</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
   --yellow-500: hsl(39, 100%, 71%);
   
   /* Neutral */
-  --white: hsl(0, 0%, 100%);
+  --white: hsl(0, 0%, 96%);
   --black: hsl(0, 0%, 7%);
 }
 
@@ -39,9 +39,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 40px 0 40px 0;
-    padding-top: 1200px;
+    /* padding-top: 20rem; */
+
 }
 
 .grid-container {
@@ -88,8 +89,31 @@ body {
 }
 
 .item{
-border : 1px solid ;
+border-radius : 10px;
 }
+
+@media (max-width: 768px) {
+  p {
+    white-space: normal; /* Text will wrap, breaking lines without <br> */
+  }
+  
+  .grid-container {
+ grid-template-areas:
+      'social'
+      'social'
+      'manage'
+      'maintain'
+      'schedule'
+      'grow'
+      'audience'
+      'create'
+      'write'
+       ;
+    grid-auto-rows: auto; 
+    grid-template-columns: 1fr; 
+  }
+}
+
 
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
@@ -98,53 +122,62 @@ border : 1px solid ;
 </head>
 <body>
 
-  <div  class="grid-container my-12">
-    <div class="item item1 flex flex-col items-center justify-center bg-[var(--yellow-100)]" style="letter-spacing: -0.10em;">
-        <p class="text-4xl font-semibold pr-8">Create and <br> schedule <br>content <br> <span class="text-[var(--purple-500)] italic">quicker.</span></p>
+
+
+  <div  class="grid-container my-12 ">
+    <div class="item item1 flex flex-col items-center justify-center bg-[var(--yellow-100)] " style="letter-spacing: -0.10em;">
+        <p class="text-4xl font-semibold pr-8 max-sm:text-3xl max-sm:font-semibold">Create and <br> schedule <br>content <br> <span class="text-[var(--purple-500)] italic">quicker.</span></p>
        <img src="./assets/images/illustration-create-post.webp" alt="create-btn" class="w-2/3 my-6">
     </div>
-    <div class="item item2 flex flex-col items-center justify-center font-bold text-white bg-[var(--purple-500)] ">
-        <h2 class="text-6xl text-center">Social Media <span>10x</span> <br> <span>Faster</span> with AI</h2>
+    <div class="item item2 flex flex-col items-center justify-center font-bold text-white bg-[var(--purple-500)] max-sm:py-12">
+        <h2 class="text-6xl text-center max-sm:whitespace-normal">Social Media <span class="text-[var(--yellow-500)]">10x</span>  <span class="hidden sm:inline"><br></span> <span>Faster</span> with AI</h2>
         <img src="./assets/images/illustration-five-stars.webp" class="w-[170px] my-3" alt="stars">
         <p class="text-lg font-light">Over 4,000 5-star reviews</p>
      
     </div>
-    <div class="item item3 relative flex flex-col justify-center items-center bg-[var(--purple-100)] ">
+    <div class="item item3 relative flex flex-col justify-center items-center bg-[var(--purple-100)] max-sm:p-8">
         <p class="text-4xl font-semibold mb-4">Schedule to <br>social media.</p>
         <div class="relative w-full h-[410px] overflow-clip">
-          <img class="h-[410px] object-cover object-left ml-12" src="./assets/images/illustration-schedule-posts.webp" alt="schedule">
+          <img class="max-sm:h-[410px] md:object-cover md:object-left md:ml-12 max-sm:h-auto" src="./assets/images/illustration-schedule-posts.webp" alt="schedule">
       </div>
-      <p class="text-lg font-medium mt-4">Optimize post timings <br> to publish content at <br> the  perfect time for <br>  your  audience</p>
+      <p class="text-lg font-medium mt-4 max-sm:text-2xl">Optimize post timings <br> to publish content at <br> the  perfect time for <br>  your  audience</p>
     </div>
     <div class="item item4 flex flex-col items-center justify-center gap-8 bg-[var(--yellow-500)]" style="letter-spacing: -0.10em;">
-        <p class="text-4xl font-semibold self-start mx-4">Write your <br> content <br> using AI</p>
+        <p class="text-4xl font-semibold self-start mx-4 max-sm:text-3xl max-sm:font-semibold">Write your <br> content <br> using AI</p>
         <div class="mx-4">
           <img src="./assets/images/illustration-ai-content.webp" alt="">
         </div>
     </div>
-    <div class="item item5">
-        <p>Manage multiple accounts and platforms.</p>
+    <div class="item item5 bg-white">
+     <div class="overflow-clip">
+      <img class="w-[100vh] ml-8" src="./assets/images/illustration-multiple-platforms.webp" alt="">
+     </div>
+        <p class="text-4xl font-bold ml-8 max-sm:whitespace-normal max-sm:text-3xl max-sm:font-semibold">Manage <br> multiple <br>accounts <br> and <br>platforms.</p>
     </div>
-    <div class="item item6">
-        <p>Maintain a consistent posting schedule.</p>
-        <div class="schedule">
-            <p>August 2024</p>
-            <p>Week 1</p>
+    <div class="item item6 bg-[var(--yellow-500)] overflow-hidden">
+        <p class="text-4xl font-bold ml-8 mt-2 max-sm:whitespace-normal max-sm:text-3xl">Maintain a <br> consistent <br> posting <br> schedule.</p>
+        <div class="mx-4 ">
+            <img class="w-auto" src="./assets/images/illustration-consistent-schedule.webp" alt="schedule">
         </div>
     </div>
-    <div class="item item7">
-        <p>&gt;56% faster audience growth</p>
+    <div class="item item7 flex flex-col  justify-center bg-white">
+        <p class="text-7xl font-bold ml-8">>56% </p>
+        <p class="text-lg font-medium my-6 ml-8">faster audience growth</p>
+        <img src="./assets/images/illustration-audience-growth.webp" class="w-2/3 ml-8" alt="audience">
     </div>
-    <div class="item item8">
-        <p>Grow followers with non-stop content.</p>
-        <div class="follower-stats">
-            <p>Follower Growth 20,642 (+80%)</p>
-            <p>Followers 89,532 (+107%)</p>
-        </div>
+    <div class="item item8 flex md:flex-row flex-col items-center justify-center  bg-[var(--purple-500)] max-sm:p-8">
+      <img src="./assets/images/illustration-grow-followers.webp" class="w-2/5 max-sm:w-full" alt="grow-followers">
+      <p class="text-white text-4xl md:mr-8 font-semibold max-sm:text-center  max-sm:mt-12 max-sm:text-3xl max-sm:texts-medium">Grow followers <br> with  nonstop <br> content</p>
     </div>
 </div>
 
 
-  </div>
+
+<script>
+  // JavaScript to remove <br> tags on mobile devices
+  if (window.innerWidth <= 768) {
+    document.querySelectorAll('br').forEach(br => br.style.display = 'none');
+  }
+</script>
 </body>
 </html>
