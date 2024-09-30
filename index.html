@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Bento grid</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template-areas: 
+  'create social social schedule'
+  'create social social schedule'
+  'create social social schedule'
+  'create manage maintain schedule'
+  'write manage maintain schedule'
+  'write audience grow grow'
+  'write audience grow grow'
+  'write audience grow grow';
+}
+.item1{
+  grid-area: create;
+}
+.item2{
+  grid-area: social;
+}
+.item3{
+  grid-area: schedule;
+}
+.item4{
+  grid-area: write;
+}
+.item5{
+  grid-area: manage;
+}
+.item6{
+  grid-area: maintain;
+}
+.item7{
+  grid-area: audience;
+}
+.item8{
+  grid-area: grow;
+}
+
+.item{
+  background-color: aqua;
+}
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="item item1">
+        <p>Create <strong>quicker</strong>.</p>
+        <button>Create Post</button>
+    </div>
+    <div class="item item2">
+        <h2>Social Media <span>10x</span> Faster with AI</h2>
+        <p>Over 4,000 5-star reviews</p>
+        <p>Over 4,000 5-star reviews</p>
+        <p>Over 4,000 5-star reviews</p>
+    </div>
+    <div class="item item3">
+        <p>Schedule to social media.</p>
+        <div class="chart">
+            <p>Best Time to Post</p>
+            <div class="bars">
+                <p>Most Active</p>
+                <!-- Insert chart bars here -->
+            </div>
+        </div>
+    </div>
+    <div class="item item4">
+        <p>Write .</p>
+        <div class="ai-text">
+            <p>Give .</p>
+        </div>
+    </div>
+    <div class="item item5">
+        <p>Manage multiple accounts and platforms.</p>
+    </div>
+    <div class="item item6">
+        <p>Maintain a consistent posting schedule.</p>
+        <div class="schedule">
+            <p>August 2024</p>
+            <p>Week 1</p>
+        </div>
+    </div>
+    <div class="item item7">
+        <p>&gt;56% faster audience growth</p>
+    </div>
+    <div class="item item8">
+        <p>Grow followers with non-stop content.</p>
+        <div class="follower-stats">
+            <p>Follower Growth 20,642 (+80%)</p>
+            <p>Followers 89,532 (+107%)</p>
+        </div>
+    </div>
+</div>
+
+
+  </div>
+</body>
+</html>
