@@ -7,32 +7,56 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Bento grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
  * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+  
+    /* padding: 0; */
+    font-family: 'DM Sans';
+}
+
+:root {
+  /* Purple */
+  --purple-100: hsl(254, 88%, 90%);
+  --purple-500: hsl(256, 67%, 59%);
+  
+  /* Yellow */
+  --yellow-100: hsl(31, 66%, 93%);
+  --yellow-500: hsl(39, 100%, 71%);
+  
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 7%);
 }
 
 body {
-    background-color: #f0f0f0;
+    background-color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 40px 0 40px 0;
+    padding-top: 1200px;
 }
 
 .grid-container {
+  max-width: 1400px;
   display: grid;
-  gap: 10px;
+  gap: 2rem; 
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 75px;
   grid-template-areas: 
   'create social social schedule'
   'create social social schedule'
   'create social social schedule'
+  'create social social schedule'
   'create manage maintain schedule'
+  'write manage maintain schedule'
   'write manage maintain schedule'
   'write audience grow grow'
   'write audience grow grow'
@@ -64,7 +88,7 @@ body {
 }
 
 .item{
-  background-color: aqua;
+border : 1px solid ;
 }
 
     .attribution { font-size: 11px; text-align: center; }
@@ -73,31 +97,29 @@ body {
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <div class="grid-container">
-    <div class="item item1">
-        <p>Create <strong>quicker</strong>.</p>
-        <button>Create Post</button>
+
+  <div  class="grid-container my-12">
+    <div class="item item1 flex flex-col items-center justify-center bg-[var(--yellow-100)]" style="letter-spacing: -0.10em;">
+        <p class="text-4xl font-semibold pr-8">Create and <br> schedule <br>content <br> <span class="text-[var(--purple-500)] italic">quicker.</span></p>
+       <img src="./assets/images/illustration-create-post.webp" alt="create-btn" class="w-2/3 my-6">
     </div>
-    <div class="item item2">
-        <h2>Social Media <span>10x</span> Faster with AI</h2>
-        <p>Over 4,000 5-star reviews</p>
-        <p>Over 4,000 5-star reviews</p>
-        <p>Over 4,000 5-star reviews</p>
+    <div class="item item2 flex flex-col items-center justify-center font-bold text-white bg-[var(--purple-500)] ">
+        <h2 class="text-6xl text-center">Social Media <span>10x</span> <br> <span>Faster</span> with AI</h2>
+        <img src="./assets/images/illustration-five-stars.webp" class="w-[170px] my-3" alt="stars">
+        <p class="text-lg font-light">Over 4,000 5-star reviews</p>
+     
     </div>
-    <div class="item item3">
-        <p>Schedule to social media.</p>
-        <div class="chart">
-            <p>Best Time to Post</p>
-            <div class="bars">
-                <p>Most Active</p>
-                <!-- Insert chart bars here -->
-            </div>
-        </div>
+    <div class="item item3 relative flex flex-col justify-center items-center bg-[var(--purple-100)] ">
+        <p class="text-4xl font-semibold mb-4">Schedule to <br>social media.</p>
+        <div class="relative w-full h-[410px] overflow-clip">
+          <img class="h-[410px] object-cover object-left ml-12" src="./assets/images/illustration-schedule-posts.webp" alt="schedule">
+      </div>
+      <p class="text-lg font-medium mt-4">Optimize post timings <br> to publish content at <br> the  perfect time for <br>  your  audience</p>
     </div>
-    <div class="item item4">
-        <p>Write .</p>
-        <div class="ai-text">
-            <p>Give .</p>
+    <div class="item item4 flex flex-col items-center justify-center gap-8 bg-[var(--yellow-500)]" style="letter-spacing: -0.10em;">
+        <p class="text-4xl font-semibold self-start mx-4">Write your <br> content <br> using AI</p>
+        <div class="mx-4">
+          <img src="./assets/images/illustration-ai-content.webp" alt="">
         </div>
     </div>
     <div class="item item5">
